@@ -4,9 +4,14 @@
             <RouterLink :to="{name: 'home' }">
                 <div class="flex items-center gap-3 flex-1">
                     <i class="fa-solid fa-football text-2xl"></i>
-                    <p>Flag Football Lineups</p>
+                    <p class="text-white text-2xl items-center">Flag Football Lineups</p>
+                    
                 </div>
             </RouterLink>
+            
+            <div class="flex gap-3 flex-1 justify-end">
+                <p class="text-xl hover:text-black duration-150 cursor-pointer">Playmaker</p>
+            </div>
 
             <div class="flex gap-3 flex-1 justify-end">
                 <i class="fa-solid fa-circle-info text-xl hover:text-black duration-150 cursor-pointer"></i>
