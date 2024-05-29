@@ -16,7 +16,7 @@
                     <option value="wr">Wide Receiver</option>
                 </select>
             </div>
-            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm text-white bg-yellow-400 hover:bg-yelow-700 focus:outline-none focus:ring-offset-2 focus:ring-yellow-200">Add Player</button>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Add Player</button>
         </form>
     </div>
 </template>
