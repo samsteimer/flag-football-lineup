@@ -1,10 +1,11 @@
 <template>
-    <div class="flex flex-col m-2">
+    <div class="flex flex-col mt-2 mx-10">
+      
         <AddPlayerForm @playerSubmitted="handlePlayerSubmitted" class="m-1" />
         
         <TeamList :flagTeam="flagTeam" @playerDeleted="handlePlayerDeleted" @lineupSet="handleLineupSet" class="m-1" />
 
-        <LineupCard :lineups="lineups" class="m-1"/>
+        <LineupCard :lineups="lineups" @removeLineup="handleRemoveLineup" class="m-1"/>
 
     </div>
 </template>
@@ -32,7 +33,6 @@ onMounted(() => {
         lineups.value = savedLineups;
     }
 });
-
 
 const handlePlayerSubmitted = (player) => {
     flagTeam.value.push({
@@ -64,6 +64,11 @@ const handleLineupSet = (newLineUp) => {
         lineups.value.push(JSON.parse(JSON.stringify(newLineUp)));
         localStorage.setItem('lineups', JSON.stringify(lineups.value));
     }
+};
+
+const handleRemoveLineup = (index) => {
+    lineups.value.splice(index, 1);
+    localStorage.setItem('lineups', JSON.stringify(lineups.value));
 }
 </script>
 

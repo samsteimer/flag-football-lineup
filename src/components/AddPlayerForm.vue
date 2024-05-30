@@ -11,12 +11,12 @@
                 <label for="position" class="block text-gray-700 text-sm mb-2">Preferred Position</label>
                 <select class="text-gray-400 shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" name="position" id="position" v-model="position">
                     <option value="qb">Quarterback</option>
-                    <option value="center">Center</option>
+                    <option value="c">Center</option>
                     <option value="rb">Runningback</option>
                     <option value="wr">Wide Receiver</option>
                 </select>
             </div>
-            <button type="submit" class="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Add Player</button>
+            <button type="submit" class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Add Player</button>
         </form>
     </div>
 </template>
