@@ -1,9 +1,10 @@
 <template>
-    <div class="flex flex-col mt-2 mx-10">
-      
-        <AddPlayerForm @playerSubmitted="handlePlayerSubmitted" class="m-1" />
+    <div class="container flex flex-col justify-center sm:flex-row">
+        <div class="flex flex-col">
+            <TeamList :flagTeam="flagTeam" @playerDeleted="handlePlayerDeleted" @lineupSet="handleLineupSet" @addPlayer="showAddPlayerForm" class="m-1" />
         
-        <TeamList :flagTeam="flagTeam" @playerDeleted="handlePlayerDeleted" @lineupSet="handleLineupSet" class="m-1" />
+            <AddPlayerForm v-if="isAddPlayerFormVisible" @playerSubmitted="handlePlayerSubmitted" @cancelAddPlayer="cancelAddPlayer" class="m-1" />
+        </div>
 
         <LineupCard :lineups="lineups" @removeLineup="handleRemoveLineup" class="m-1"/>
 
@@ -19,8 +20,9 @@ import { ref, onMounted } from 'vue';
 
 
 const flagTeam = ref ([]);
-const lineup = ref ({});
 const lineups = ref ([]);
+const isAddPlayerFormVisible = ref(false);
+
 
 onMounted(() => {
     const savedTeam = JSON.parse(localStorage.getItem('flagTeam'));
@@ -34,6 +36,14 @@ onMounted(() => {
     }
 });
 
+const showAddPlayerForm = () => {
+    isAddPlayerFormVisible.value = true;
+};
+
+const cancelAddPlayer = () => {
+    isAddPlayerFormVisible.value =false;
+}
+
 const handlePlayerSubmitted = (player) => {
     flagTeam.value.push({
         id: generateUniqueID(),
@@ -42,6 +52,8 @@ const handlePlayerSubmitted = (player) => {
     });
 
     saveTeamToLocalStorage();
+
+    isAddPlayerFormVisible.value = false;
 
     alert('Player added.')
 };
@@ -69,6 +81,8 @@ const handleLineupSet = (newLineUp) => {
 const handleRemoveLineup = (index) => {
     lineups.value.splice(index, 1);
     localStorage.setItem('lineups', JSON.stringify(lineups.value));
-}
+};
+
+
 </script>
 

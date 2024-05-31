@@ -1,10 +1,10 @@
 <template>
-    <div class="bg-white shadow-md rounded-lg px-8 py-4 max-w-md">
+    <div class="bg-white shadow-md rounded-lg px-8 py-4 max-w-sm">
         <h1 class="text-2xl font-bold text-center"> Team</h1>
-        <div class="flex flex-col flex-1 px-8 py-1">
+        <div class="flex flex-col flex-1 py-1">
             <ul class="flex flex-col">
                 <li v-for="player in flagTeam" v-bind:key="player.id" class="flex items-center mb-2">
-                    <div class="flex flex-1 items-center bg-gray-200 shadow-sm rounded-md border border-gray-300 px-4 py-2 hover:cursor-move">
+                    <div class="flex flex-1 items-center bg-gray-200 shadow-sm rounded-md border border-gray-300 px-4 py-2">
                         <button class="text-red-300 hover:text-red-600 mr-2" @click="deletePlayer(player.id)">
                             <i class="fa-solid fa-circle-minus"></i>
                         </button>
@@ -22,14 +22,17 @@
                 </li>
             </ul>
         </div>
-        <button type="submit" class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200" @click="setLineup">Set Lineup</button>
+        <div class="flex items-center">
+            <button type="submit" class="w-40 flex justify-center py-2 px-4 mr-16 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200" @click="setLineup">Set Lineup</button>
+            <button class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200" @click="$emit('addPlayer')">Add Player</button>
+        </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const emit = defineEmits(['playerDeleted', 'lineupSet'])
+const emit = defineEmits(['playerDeleted', 'lineupSet', 'addPlayer'])
 
 const props = defineProps({
     flagTeam: {

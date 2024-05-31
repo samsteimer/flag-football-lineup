@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white shadow-md rounded-lg px-8 py-4 max-w-md">
+    <div class="bg-white shadow-md rounded-lg px-8 py-4 max-w-sm">
         <h1 class="text-2xl font-bold text-center mb-2">Enter Player</h1>
         <form @submit.prevent="onSubmit">
             <div class="mb-4">
@@ -16,7 +16,10 @@
                     <option value="wr">Wide Receiver</option>
                 </select>
             </div>
-            <button type="submit" class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Add Player</button>
+            <div class="flex items-center">
+                <button type="submit" class="w-40 flex justify-center py-2 px-4 mr-16 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Add Player</button>
+                <button class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200" @click="$emit('cancelAddPlayer')">Cancel</button>
+            </div>
         </form>
     </div>
 </template>
@@ -27,7 +30,7 @@ import { ref } from 'vue';
 const name = ref ('');
 const position = ref ('');
 
-const emit = defineEmits(['playerSubmitted'])
+const emit = defineEmits(['playerSubmitted', 'cancelAddPlayer'])
 
 const onSubmit = () => {
     const playerData = {

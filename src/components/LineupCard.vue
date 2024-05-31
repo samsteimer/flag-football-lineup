@@ -3,9 +3,9 @@
         <div v-if="lineups.length === 0">
             <p>No lineups set.</p>
         </div>
-        <div v-else v-for="(lineupData, index) in lineups" :key="index" class="bg-white shadow-md rounded-lg px-8 py-4 max-w-md mb-2">
+        <div v-else v-for="(lineupData, index) in lineups" :key="index" class="bg-white shadow-md rounded-lg py-4 max-w-sm mb-2">
             <h1 class="text-2xl font-bold text-center mb-2">Lineup {{ index + 1 }}</h1>
-            <div class="flex items-center ml-4 ">
+            <div class="flex items-center mx-4 ">
                 <p class="text-2xl">Q</p>
                 <div class="flex items-center bg-gray-200 shadow-sm rounded-md border border-gray-300 px-4 py-1 ml-2 mb-2 w-80">
                     <span class="">{{ lineupData._value.q }}</span>        
@@ -36,7 +36,7 @@
                     <span class="">{{ lineupData._value.z }}</span>        
                 </div>
             </div>
-            <div>
+            <div class="px-8">
                 <button @click="removeLineup(index)" class="w-40 flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm text-gray-500 bg-yellow-300 hover:bg-yellow-400 focus:outline-none focus:ring-offset-2  focus:ring-yellow-200">Remove Lineup</button>
             </div>
         </div>
