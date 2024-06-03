@@ -8,11 +8,11 @@
                     
                 </div>
             </RouterLink>
-            
-            <div class="flex gap-3 flex-1 justify-end">
-                <p class="text-xl hover:text-black duration-150 cursor-pointer">Playmaker</p>
-            </div>
-
+            <RouterLink :to="{name: 'playmaker'}">
+                <div class="flex gap-3 flex-1 justify-end">
+                    <p class="text-xl hover:text-black duration-150 cursor-pointer">Playmaker</p>
+                </div>
+            </RouterLink>
             <div class="flex gap-3 flex-1 justify-end">
                 <i class="fa-solid fa-circle-info text-xl hover:text-black duration-150 cursor-pointer"></i>
             </div>
