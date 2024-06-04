@@ -6,6 +6,12 @@ export default {
       container: {
         padding: "1rem",
         center: true,
+      },
+      width: {
+        '600': '600px'
+      },
+      height: {
+        '400': '400px'
       }
     },
   },
