@@ -59,7 +59,7 @@ const drawingLine = ref(false);
 const tempLine = ref({ start: { x: 0, y: 0 }, end: { x: 0, y: 0 } });
 const canDrawLine = ref(false);
 
-const playerNames = ['C', 'Q', 'X', 'Y', 'Z'];
+const playerNames = ['X', 'Q', 'C', 'Y', 'Z'];
 
 onMounted(() => {
   if (players.value.length === 0) {
@@ -72,7 +72,7 @@ const initializePlayers = () => {
     addPlayer({
       id: generateUniqueID(),
       name: name,
-      position: { x: 100 * (index + 1), y: 100 }
+      position: { x: 100 * (index + 1), y: 250 }
     });
   });
 };

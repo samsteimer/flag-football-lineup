@@ -1,11 +1,14 @@
 <template>
-  <RouterLink :to="{name: 'lineup' }">
+  <RouterLink :to="{ name: 'lineup' }">
     <div>
-      <p>Add New Team</p>
+      <p>Team Manager</p>
     </div>
   </RouterLink>
-  <p>Edit Team</p>
-  
+  <RouterLink :to="{ name: 'playmaker' }">
+    <div>
+      <p>Playmaker</p>
+    </div>
+  </RouterLink>
 </template>
 
 <script setup>
